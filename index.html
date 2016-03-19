@@ -99,7 +99,7 @@
 	              var hero_url = rows[i][1];
 	              var hero_current_tier = rows[i][2];
 				  var hero_last_tier = rows[i][3];
-				  var hero_role = rows[i][4]
+				  var hero_role = rows[i][4].toLowerCase();
 				  var hero = $('<a class="hero' + (hero_role ? ' ' + hero_role : '') +  '"' + (hero_url ? 'href="' + hero_url + '"' : '') + '>' + hero_name + '</a>');
 				  $('#tier' + hero_current_tier).append(hero);
 	            }
