@@ -56,17 +56,33 @@
 		{
 			background-color: #135714;
 		}
+		.hero.warrior:hover,.hero.warrior:active,.hero.warrior:visited
+		{
+			background-color: #186d19;
+		}
 		.hero.support
 		{
 			background-color: #153465;
+		}
+		.hero.support:hover,.hero.support:active,.hero.support:visited
+		{
+			background-color: #193f7b;
 		}
 		.hero.assassin
 		{
 			background-color: #67160E;
 		}
+		.hero.assassin:hover,.hero.assassin:active,.hero.assassin:visited
+		{
+			background-color: #7e1a11;
+		}
 		.hero.specialist
 		{
 			background-color: #341B4D;
+		}
+		.hero.specialist:hover,.hero.specialist:active,.hero.specialist:visited
+		{
+			background-color: #40215e;
 		}
 		h1
 		{
@@ -124,6 +140,7 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
     <script type="text/javascript">
+
       function initialize() {
         var query = "SELECT hero_name, hero_url, hero_current_tier, hero_last_tier, hero_role FROM " +
             '1JgPmRDbgA5nFwSRCnFlTP2SBEogS76bV94H-qNXO ORDER BY hero_role ASC';
@@ -173,6 +190,8 @@
           }
         });
       }
+
+
 	 initialize();
     </script>
   </head>
