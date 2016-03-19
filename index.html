@@ -17,7 +17,12 @@
 <html>
   <head>
     <meta charset="UTF-8">
-
+	<style>
+		.hero
+		{
+			margin-left: 30px;
+		}
+	</style>
     <script
         src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
     </script>
@@ -46,7 +51,7 @@
 	              var hero_url = rows[i][1];
 	              var hero_current_tier = rows[i][2];
 				  var hero_last_tier = rows[i][3];
-				  var hero = $('<a ' + (hero_url ? 'href="' + hero_url + '"' : '') + '>' + hero_name + '</a>');
+				  var hero = $('<a class="hero"' + (hero_url ? 'href="' + hero_url + '"' : '') + '>' + hero_name + '</a>');
 				  $('#tier' + hero_current_tier).append(hero);
 	            }
 			});
@@ -59,7 +64,7 @@
   </head>
   <body>
     <div id="tiers">
-		<div id="tier1">Hello?</div>
+		<div id="tier1"></div>
 		<div id="tier2"></div>
 		<div id="tier3"></div>
 		<div id="tier4"></div>
