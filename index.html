@@ -39,10 +39,13 @@
     <script
         src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
     </script>
+	<script>
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"
+	</script>
     <script type="text/javascript">
       function initialize() {
         var query = "SELECT hero_name, hero_url, hero_current_tier, hero_last_tier FROM " +
-            '1JgPmRDbgA5nFwSRCnFlTP2SBEogS76bV94H-qNXO';
+            '1JgPmRDbgA5nFwSRCnFlTP2SBEogS76bV94H-qNXO ORDER BY hero_current_tier ASC';
         var encodedQuery = encodeURIComponent(query);
 
         // Construct the URL
@@ -56,28 +59,31 @@
           url: url.join(''),
           dataType: 'jsonp',
           success: function (data) {
+			console.log(JSON.stringify(data));
             var rows = data['rows'];
             var ftData = document.getElementById('ft-data');
             for (var i in rows) {
-              var store = rows[i][0];
-              var address = rows[i][1];
-              var delivers = rows[i][2];
+              var hero_name = rows[i][0];
+              var hero_url = rows[i][1];
+              var hero_current_tier = rows[i][2];
+			  var hero_last_tier = rows[i][3];
               var dataElement = document.createElement('div');
               var storeElement = document.createElement('p');
-              storeElement.innerHTML = store;
-              storeElement.className = 'store-name';
-              var addressElement = document.createElement('p');
-              addressElement.innerHTML = address;
-              addressElement.className = 'address';
-              var deliversElement = document.createElement('p');
-              deliversElement.innerHTML = 'Delivers? ' + delivers;
-              deliversElement.className = 'delivers';
-
-              dataElement.appendChild(storeElement);
-              dataElement.appendChild(addressElement);
-              dataElement.appendChild(deliversElement);
-              ftData.appendChild(dataElement);
             }
+
+			storeElement.innerHTML = store;
+			storeElement.className = 'store-name';
+			var addressElement = document.createElement('p');
+			addressElement.innerHTML = address;
+			addressElement.className = 'address';
+			var deliversElement = document.createElement('p');
+			deliversElement.innerHTML = 'Delivers? ' + delivers;
+			deliversElement.className = 'delivers';
+
+			dataElement.appendChild(storeElement);
+			dataElement.appendChild(addressElement);
+			dataElement.appendChild(deliversElement);
+			ftData.appendChild(dataElement);
           }
         });
       }
