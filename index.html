@@ -59,31 +59,19 @@
           url: url.join(''),
           dataType: 'jsonp',
           success: function (data) {
+			$(document).ready(function(){
+				$(document).append('<div/>', {
+						id: 'tiers'
+				});
+			});
 			console.log(JSON.stringify(data));
             var rows = data['rows'];
-            var ftData = document.getElementById('ft-data');
             for (var i in rows) {
               var hero_name = rows[i][0];
               var hero_url = rows[i][1];
               var hero_current_tier = rows[i][2];
 			  var hero_last_tier = rows[i][3];
-              var dataElement = document.createElement('div');
-              var storeElement = document.createElement('p');
             }
-
-			storeElement.innerHTML = store;
-			storeElement.className = 'store-name';
-			var addressElement = document.createElement('p');
-			addressElement.innerHTML = address;
-			addressElement.className = 'address';
-			var deliversElement = document.createElement('p');
-			deliversElement.innerHTML = 'Delivers? ' + delivers;
-			deliversElement.className = 'delivers';
-
-			dataElement.appendChild(storeElement);
-			dataElement.appendChild(addressElement);
-			dataElement.appendChild(deliversElement);
-			ftData.appendChild(dataElement);
           }
         });
       }
