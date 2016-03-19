@@ -33,7 +33,6 @@
         url.push('?sql=' + encodedQuery);
         url.push('&key=AIzaSyAm9yWCV7JPCTHCJut8whOjARd7pwROFDQ');
         url.push('&callback=?');
-		console.log('here...');
         // Send the JSONP request using jQuery
         $.ajax({
           url: url.join(''),
@@ -55,6 +54,7 @@
           }
         });
       }
+	 initialize();
     </script>
   </head>
   <body>
