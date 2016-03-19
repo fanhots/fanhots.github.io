@@ -41,12 +41,12 @@
     </script>
     <script type="text/javascript">
       function initialize() {
-        var query = "SELECT 'Store Name', Address, delivery FROM " +
+        var query = "SELECT hero_name, hero_url, hero_current_tier, hero_last_tier FROM " +
             '1JgPmRDbgA5nFwSRCnFlTP2SBEogS76bV94H-qNXO';
         var encodedQuery = encodeURIComponent(query);
 
         // Construct the URL
-        var url = ['https://www.googleapis.com/fusiontables/v1/query'];
+        var url = ['https://www.googleapis.com/fusiontables/v2/query'];
         url.push('?sql=' + encodedQuery);
         url.push('&key=AIzaSyAm9yWCV7JPCTHCJut8whOjARd7pwROFDQ');
         url.push('&callback=?');
