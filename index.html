@@ -51,7 +51,7 @@
               var hero_url = rows[i][1];
               var hero_current_tier = rows[i][2];
 			  var hero_last_tier = rows[i][3];
-			  var hero = $('<a ' + hero_url ? 'href="' + hero_url '">' + hero_name + '</a>');
+			  var hero = $('<a ' + hero_url ? 'href="' + hero_url + '">' + hero_name + '</a>');
 			  $('#tier' + hero_current_tier).append(hero);
             }
           }
