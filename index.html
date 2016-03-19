@@ -126,15 +126,15 @@
 				  var hero_role = rows[i][4].toLowerCase();
 				  if (hero_current_tier > hero_last_tier)
 				  {
-					  var arrow = 'fa-arrow-up';
+					  var arrow = 'fa fa-long-arrow-up';
 				  }
 				  else if (hero_current_tier < hero_last_tier)
 				  {
-					  var arrow = 'fa-arrow-down';
+					  var arrow = 'fa fa-long-arrow-down';
 				  }
 				  else
 				  {
-				      var arrow = 'fa-arrow-right';
+				      var arrow = 'fa fa-long-arrow-right';
 				  }
 				  var hero = $('<a class="hero' + (hero_role ? ' ' + hero_role : '') +  '"' + (hero_url ? 'href="' + hero_url + '" target="_blank"' : '') + '>' + hero_name + '</a>');
 				  var span = $('<span class="' + arrow + '"></span>');
