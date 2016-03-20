@@ -99,7 +99,7 @@
 			margin-bottom: 15px;
 			text-align: center;
 			font-weight: normal;
-			background-color: #E4E4E4;
+			background-color: #C2AE62;
 		}
 		h2
 		{
@@ -156,7 +156,7 @@
 
       function initialize() {
         var query = "SELECT hero_name, hero_url, hero_current_tier, hero_last_tier, hero_role FROM " +
-            '1JgPmRDbgA5nFwSRCnFlTP2SBEogS76bV94H-qNXO ORDER BY hero_role ASC';
+            '1JgPmRDbgA5nFwSRCnFlTP2SBEogS76bV94H-qNXO ORDER BY hero_name ASC';
         var encodedQuery = encodeURIComponent(query);
 
         // Construct the URL
