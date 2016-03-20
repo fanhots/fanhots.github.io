@@ -181,24 +181,24 @@
 	              var hero_current_tier = rows[i][2];
 				  var hero_last_tier = rows[i][3];
 				  var hero_role = rows[i][4].toLowerCase();
-				  if (hero_current_tier < hero_last_tier)
-				  {
-					  var arrow = 'fa fa-long-arrow-up';
-					  var tooltip = 'Up From Tier ' + hero_last_tier;
-				  }
-				  else if (hero_current_tier > hero_last_tier)
-				  {
-					  var arrow = 'fa fa-long-arrow-down';
-					  var tooltip = 'Down From Tier ' + hero_last_tier;
-				  }
-				  else
-				  {
-				      var arrow = 'fa fa-long-arrow-right';
-					  var tooltip = 'No Tier Change';
-				  }
 				  var hero = $('<a class="hero' + (hero_role ? ' ' + hero_role : '') +  '"' + (hero_url ? 'href="' + hero_url + '" target="_blank"' : '') + '>' + hero_name + '</a>');
 				  if (hero_last_tier)
 				  {
+					  if (hero_current_tier < hero_last_tier)
+					  {
+						  var arrow = 'fa fa-long-arrow-up';
+						  var tooltip = 'Up From Tier ' + hero_last_tier;
+					  }
+					  else if (hero_current_tier > hero_last_tier)
+					  {
+						  var arrow = 'fa fa-long-arrow-down';
+						  var tooltip = 'Down From Tier ' + hero_last_tier;
+					  }
+					  else
+					  {
+						  var arrow = 'fa fa-long-arrow-right';
+						  var tooltip = 'No Tier Change';
+					  }
 					  var span = $('<span class="' + arrow + '" data-position="top" data-toggle="tooltip" title="' + tooltip + '"></span>');
 					  hero.append(span);
 				  }
