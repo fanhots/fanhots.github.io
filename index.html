@@ -197,8 +197,12 @@
 					  var tooltip = 'No Tier Change';
 				  }
 				  var hero = $('<a class="hero' + (hero_role ? ' ' + hero_role : '') +  '"' + (hero_url ? 'href="' + hero_url + '" target="_blank"' : '') + '>' + hero_name + '</a>');
-				  var span = $('<span class="' + arrow + '" data-position="top" data-toggle="tooltip" title="' + tooltip + '"></span>');
-				  hero.append(span);
+				  if (hero_last_tier)
+				  {
+					  var span = $('<span class="' + arrow + '" data-position="top" data-toggle="tooltip" title="' + tooltip + '"></span>');
+					  hero.append(span);
+				  }
+
 				  $('#tier' + hero_current_tier).append(hero);
 	            }
 				$("body").tooltip({ selector: '[data-toggle=tooltip]' });
