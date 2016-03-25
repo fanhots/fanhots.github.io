@@ -45,6 +45,12 @@
 			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 			background-color: #000;
 		}
+
+        .hero_icon
+        {
+            margin-right: 10px;
+        }
+
 		body
 		{
 			background-color: #999;
@@ -159,7 +165,7 @@
     <script type="text/javascript">
 
       function initialize() {
-        var query = "SELECT hero_name, hero_url, hero_current_tier, hero_last_tier, hero_role FROM " +
+        var query = "SELECT hero_name, hero_url, hero_current_tier, hero_last_tier, hero_role, hero_icon FROM " +
             '1JgPmRDbgA5nFwSRCnFlTP2SBEogS76bV94H-qNXO ORDER BY hero_name ASC';
         var encodedQuery = encodeURIComponent(query);
 
@@ -181,7 +187,10 @@
 	              var hero_current_tier = rows[i][2];
 				  var hero_last_tier = rows[i][3];
 				  var hero_role = rows[i][4].toLowerCase();
+                  var hero_icon = rows[i][5];
+                  var hero_icon = $('<img class="hero_icon" src="' + hero_icon + '" height="30px" width="30px"/>');
 				  var hero = $('<a class="hero' + (hero_role ? ' ' + hero_role : '') +  '"' + (hero_url ? 'href="' + hero_url + '" target="_blank"' : '') + '>' + hero_name + '</a>');
+                  hero.prepend(hero_icon);
 				  if (hero_last_tier)
 				  {
 					  if (hero_current_tier < hero_last_tier)
