@@ -183,7 +183,7 @@
 	            var rows = data['rows'];
 	            for (var i in rows) {
 	              var hero_name = rows[i][0];
-                  var normalized_name = hero_name.replace(" ", "-").replace(".","").replace("'", "").toLowerCase();
+                  var normalized_name = hero_name.replace(/ /g, "-").replace(/\./g,"").replace(/'/g, "").toLowerCase();
 	              var hero_url = rows[i][1];
 	              var hero_current_tier = rows[i][2];
 				  var hero_last_tier = rows[i][3];
