@@ -188,7 +188,7 @@
 	              var hero_current_tier = rows[i][2];
 				  var hero_last_tier = rows[i][3];
 				  var hero_role = rows[i][4].toLowerCase();
-                  var hero_icon = '/images/heroicons/' + normalized_name;
+                  var hero_icon = '/images/heroicons/' + normalized_name + '.png';
                   var hero_icon = $('<img class="hero_icon" src="' + hero_icon + '" height="30px" width="30px"/>');
 				  var hero = $('<a class="hero' + (hero_role ? ' ' + hero_role : '') +  '"' + (hero_url ? 'href="' + hero_url + '" target="_blank"' : '') + '>' + hero_name + '</a>');
                   hero.prepend(hero_icon);
