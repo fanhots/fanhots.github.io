@@ -165,7 +165,7 @@
     <script type="text/javascript">
 
       function initialize() {
-        var query = "SELECT hero_name, hero_url, hero_current_tier, hero_last_tier, hero_role, hero_icon FROM " +
+        var query = "SELECT hero_name, hero_url, hero_current_tier, hero_last_tier, hero_role FROM " +
             '1JgPmRDbgA5nFwSRCnFlTP2SBEogS76bV94H-qNXO ORDER BY hero_name ASC';
         var encodedQuery = encodeURIComponent(query);
 
@@ -183,11 +183,12 @@
 	            var rows = data['rows'];
 	            for (var i in rows) {
 	              var hero_name = rows[i][0];
+                  var normalized_name = hero_name.replace(" ", "-").replace(".","").replace("'", "").toLowerCase();
 	              var hero_url = rows[i][1];
 	              var hero_current_tier = rows[i][2];
 				  var hero_last_tier = rows[i][3];
 				  var hero_role = rows[i][4].toLowerCase();
-                  var hero_icon = rows[i][5];
+                  var hero_icon = '/images/heroicons/' + normalized_name;
                   var hero_icon = $('<img class="hero_icon" src="' + hero_icon + '" height="30px" width="30px"/>');
 				  var hero = $('<a class="hero' + (hero_role ? ' ' + hero_role : '') +  '"' + (hero_url ? 'href="' + hero_url + '" target="_blank"' : '') + '>' + hero_name + '</a>');
                   hero.prepend(hero_icon);
